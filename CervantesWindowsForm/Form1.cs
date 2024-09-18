@@ -57,7 +57,6 @@ namespace CervantesWindowsForm
                     {
                         try
                         {
-                            // Verifica se o número já existe
                             var checkCommand = new NpgsqlCommand("SELECT COUNT(1) FROM cadastro WHERE campo_numerico=@numericField", connection);
                             checkCommand.Parameters.AddWithValue("numericField", numericField);
                             var exists = (long)checkCommand.ExecuteScalar() > 0;
